@@ -14,7 +14,7 @@ jobs:
       uses: HarishTeens/woofy@v2
 
     - name: Comment PR
-      uses: HarishTeens/woofyt@master
+      uses: HarishTeens/woofy@master
       with:
         message: 'The time was ${{ steps.hello.outputs.time }}'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

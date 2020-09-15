@@ -12,7 +12,7 @@ let gifURL;
 const getGifs=async ()=>{
   const gifs=await gf.search("dogs", {limit: 1 })
   gifs.data.forEach((each)=>{
-    gifURL="https://media1.giphy.com/media/"+each.id+"/500w.gif";
+    gifURL=each.images.original.url;
   })
 }
 
@@ -24,6 +24,7 @@ try {
     core.setOutput("gif", gifURL);
     console.log(gifURL);  
   });
+  getGifs();
   
   
 } catch (error) {

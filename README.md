@@ -10,9 +10,9 @@ This action prints Comments the time of PR.
 
 ## Outputs
 
-### `time`
+### `Hello You`
 
-The time we greeted you.
+Hello <who-to-greet>
 
 ## Example usage
 

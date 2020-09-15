@@ -1,15 +1,20 @@
-on: [push]
+on: pull_request
 
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to comment hello
     steps:
     - name: Hello world action step
       id: hello
       uses: HarishTeens/woofy@v2
       with:
         who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Comment PR
+      uses: HarishTeens/woofyt@master
+      with:
+        message: 'The time was ${{ steps.hello.outputs.time }}'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }

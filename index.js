@@ -18,7 +18,7 @@ const getGifs=async ()=>{
 
 try {
   
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
+  const payload = github.context.payload
   core.setOutput("name", payload.sender.login);
   getGifs().then(()=>{
     core.setOutput("gif", gifURL);

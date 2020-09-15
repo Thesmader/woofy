@@ -11,10 +11,10 @@ jobs:
       with:
         who-to-greet: 'Mona the Octocat'
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: HarishTeens/woofy@v2
 
     - name: Comment PR
-      uses: HarishTeens/woofyt@master
+      uses: HarishTeens/woofy@master
       with:
-        message: 'The time was ${{ steps.hello.outputs.time }}'
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+        message: 'Hello ${{ steps.hello.outputs.name }}'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

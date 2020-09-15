@@ -21,6 +21,7 @@ try {
   const nameToGreet = core.getInput('who-to-greet');
   core.setOutput("name", nameToGreet);
   core.setOutput("gif", gifURL);
+  console.log(gifURL);
   getGifs();
 } catch (error) {
   core.setFailed(error.message);

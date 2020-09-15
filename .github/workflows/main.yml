@@ -17,5 +17,5 @@ jobs:
     - name: Comment PR
       uses: thollander/actions-comment-pull-request@master
       with:
-        message: 'Hello ${{ steps.hello.outputs.name }}'
+        message: 'Hello ${{ steps.hello.outputs.name }} ![image](${{ steps.hello.outputs.gif }}) '
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

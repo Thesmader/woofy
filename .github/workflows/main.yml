@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: HarishTeens/woofy@v3.2
+      uses: HarishTeens/woofy@v3.3
       with:
         who-to-greet: 'Mona the Octocat'  
      

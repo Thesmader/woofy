@@ -7,14 +7,15 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: HarishTeens/woofy@v2
-      with:
-        who-to-greet: 'Mona the Octocat'
+      uses: HarishTeens/woofy@v4.3 
+     
     - name: Checkout
-      uses: HarishTeens/woofy@v2
+      uses: actions/checkout@v1
 
     - name: Comment PR
-      uses: HarishTeens/woofy@master
+      uses: thollander/actions-comment-pull-request@master
       with:
-        message: 'Hello ${{ steps.hello.outputs.name }}'
+        message: '![image](${{ steps.hello.outputs.gif }})                                           Hello ${{ steps.hello.outputs.name }} , 
+        Thanks for your Commits, keep it rolling and be patient until a Reviewer merges it.  
+        Until then hope this doggy keeps you company 🚀  . '
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

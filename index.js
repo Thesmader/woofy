@@ -18,8 +18,8 @@ const getGifs=async ()=>{
 
 try {
   
-  const nameToGreet = core.getInput('who-to-greet');
-  core.setOutput("name", nameToGreet);
+  const payload = JSON.stringify(github.context.payload, undefined, 2)
+  core.setOutput("name", payload.sender.login);
   getGifs().then(()=>{
     core.setOutput("gif", gifURL);
     console.log(gifURL);  
